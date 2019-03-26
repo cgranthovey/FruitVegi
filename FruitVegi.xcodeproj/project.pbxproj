@@ -15,6 +15,8 @@
 		15A5574D2249D5D900A025A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A5574B2249D5D900A025A3 /* LaunchScreen.storyboard */; };
 		15A557582249D5D900A025A3 /* FruitVegiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A557572249D5D900A025A3 /* FruitVegiTests.swift */; };
 		15A557632249D5D900A025A3 /* FruitVegiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A557622249D5D900A025A3 /* FruitVegiUITests.swift */; };
+		15A557722249D90700A025A3 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A557712249D90700A025A3 /* NavBar.swift */; };
+		15A557752249DA8A00A025A3 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A557742249DA8A00A025A3 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		15A5575E2249D5D900A025A3 /* FruitVegiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitVegiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A557622249D5D900A025A3 /* FruitVegiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitVegiUITests.swift; sourceTree = "<group>"; };
 		15A557642249D5D900A025A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A557712249D90700A025A3 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		15A557742249DA8A00A025A3 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		15A5573E2249D5D700A025A3 /* FruitVegi */ = {
 			isa = PBXGroup;
 			children = (
+				15A557732249DA7200A025A3 /* VC */,
+				15A557702249D8F300A025A3 /* View */,
 				15A5573F2249D5D700A025A3 /* AppDelegate.swift */,
 				15A557412249D5D700A025A3 /* ViewController.swift */,
 				15A557432249D5D700A025A3 /* Main.storyboard */,
@@ -126,6 +132,22 @@
 				15A557642249D5D900A025A3 /* Info.plist */,
 			);
 			path = FruitVegiUITests;
+			sourceTree = "<group>";
+		};
+		15A557702249D8F300A025A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15A557712249D90700A025A3 /* NavBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15A557732249DA7200A025A3 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				15A557742249DA8A00A025A3 /* ListVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A557422249D5D700A025A3 /* ViewController.swift in Sources */,
+				15A557752249DA8A00A025A3 /* ListVC.swift in Sources */,
+				15A557722249D90700A025A3 /* NavBar.swift in Sources */,
 				15A557402249D5D700A025A3 /* AppDelegate.swift in Sources */,
 				15A557482249D5D700A025A3 /* FruitVegi.xcdatamodeld in Sources */,
 			);
@@ -443,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = question.FruitVegi;
+				PRODUCT_BUNDLE_IDENTIFIER = FruitVegi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = question.FruitVegi;
+				PRODUCT_BUNDLE_IDENTIFIER = FruitVegi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
