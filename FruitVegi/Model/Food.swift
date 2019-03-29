@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Food: Encodable{
+class Food: Codable{
     
     fileprivate var _name: String
     fileprivate var _cost: String

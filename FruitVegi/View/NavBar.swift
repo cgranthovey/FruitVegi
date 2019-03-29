@@ -12,7 +12,9 @@ class NavBar: UINavigationController {
     
     override func awakeFromNib() {
 //        navigationBar.barStyle = .black
-        navigationBar.barTintColor = UIColor.brown
+        
+        navigationBar.barTintColor = UIColor().getColor(red: 255, green: 225, blue: 53, alpha: 1)
+        
 //        navigationBar.isTranslucent = false
     }
 

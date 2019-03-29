@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ListVC-->
+        <!--My Food-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListVC" customModule="FruitVegi" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,20 +30,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-Ps-1cr">
-                                                    <rect key="frame" x="15" y="15.5" width="42" height="23"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <rect key="frame" x="15" y="15.5" width="44.5" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGk-gK-OLB">
-                                                    <rect key="frame" x="77" y="15.5" width="42" height="23"/>
-                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                                    <rect key="frame" x="79.5" y="18.5" width="37" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEA-5m-so9">
-                                                    <rect key="frame" x="303" y="5" width="42" height="23"/>
-                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
+                                                    <rect key="frame" x="325" y="5" width="30" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -51,10 +51,10 @@
                                             <constraints>
                                                 <constraint firstItem="rWs-Ps-1cr" firstAttribute="centerY" secondItem="tLZ-p8-dak" secondAttribute="centerY" id="9kJ-o3-ouH"/>
                                                 <constraint firstItem="xGk-gK-OLB" firstAttribute="leading" secondItem="rWs-Ps-1cr" secondAttribute="trailing" constant="20" id="LQR-uw-EEZ"/>
+                                                <constraint firstItem="xGk-gK-OLB" firstAttribute="firstBaseline" secondItem="rWs-Ps-1cr" secondAttribute="firstBaseline" id="Nml-5d-3Vb"/>
                                                 <constraint firstItem="rWs-Ps-1cr" firstAttribute="leading" secondItem="tLZ-p8-dak" secondAttribute="leadingMargin" id="UAn-LZ-pcE"/>
                                                 <constraint firstItem="dEA-5m-so9" firstAttribute="top" secondItem="tLZ-p8-dak" secondAttribute="top" constant="5" id="VhH-FG-tVM"/>
-                                                <constraint firstItem="xGk-gK-OLB" firstAttribute="centerY" secondItem="rWs-Ps-1cr" secondAttribute="centerY" id="c5O-HH-IQ1"/>
-                                                <constraint firstAttribute="trailing" secondItem="dEA-5m-so9" secondAttribute="trailing" constant="30" id="eIT-Yp-NFn"/>
+                                                <constraint firstAttribute="trailing" secondItem="dEA-5m-so9" secondAttribute="trailing" constant="20" id="eIT-Yp-NFn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -75,7 +75,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="l1i-xO-mBB">
+                    <navigationItem key="navigationItem" title="My Food" id="l1i-xO-mBB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jdY-I4-RbS">
                             <connections>
                                 <action selector="plusButtonPress:" destination="BYZ-38-t0r" id="nHv-9E-9AC"/>
@@ -90,14 +90,17 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Bar-->
         <scene sceneID="ia2-lV-qqp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hNq-w7-yKs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hNq-w7-yKs" customClass="NavBar" customModule="FruitVegi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cp9-sg-k4Q">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

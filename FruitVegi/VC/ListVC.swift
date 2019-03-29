@@ -23,14 +23,12 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-
-
-        items.append(Food.init(name: "Broccoli", cost: "$5/lb", dateAdded: Date()))
-        items.append(Food.init(name: "Carrot", cost: "$9/lb", dateAdded: Date()))
-        let date = Date.init(timeIntervalSinceNow: -1000000)
-        items.append(Food.init(name: "Bell Pepper Red", cost: "$1 for 1", dateAdded: date))
         // Do any additional setup after loading the view.
-        tableView.reloadData()
+        getItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,11 +50,16 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
     @IBAction func plusButtonPress(_ sender: AnyObject){
         showAddAlert()
     }
 
     func showAddAlert(){
+        
         let alertController = UIAlertController(title: "Add Food Item", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.placeholder = "Food Name"
@@ -80,16 +83,31 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         present(alertController, animated: true, completion: nil)
     }
     
+    func getItems(){
+        if let url = dataFilePath, let data = try? Data(contentsOf: url){
+            let propertyListDecoder = PropertyListDecoder()
+            do{
+                items = try propertyListDecoder.decode([Food].self, from: data)
+                tableView.reloadData()
+            } catch{
+                print("error getting core data", error.localizedDescription)
+            }
+            
+        }
+    }
+    
     func saveItems(){
-        let encoder = PropertyListEncoder()
+        let propertyListEncoder = PropertyListEncoder()
+        
         do{
-            let data = try encoder.encode(self.items)
-            if let path = self.dataFilePath{
+            let data = try propertyListEncoder.encode(items)
+            if let path = dataFilePath{
                 try data.write(to: path)
             }
-        } catch {
-            print("food encode error: ", error.localizedDescription)
+        } catch{
+            print("error encoding docs - ", error)
         }
         tableView.reloadData()
+        
     }
 }
