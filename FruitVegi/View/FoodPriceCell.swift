@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FoodPriceCell: UITableViewCell {
     
@@ -29,9 +30,12 @@ class FoodPriceCell: UITableViewCell {
         lblName.text = food.name
         lblCost.text = food.cost
         
+        
         let format = DateFormatter()
         format.dateStyle = .short
-        lblDate.text = format.string(from: food.dateAdded)
+        if let date = food.dateAdded{
+            lblDate.text = format.string(from: date)
+        }
     }
 
 }

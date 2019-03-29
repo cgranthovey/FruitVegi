@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+        //we're creating a sqlite database to save the data to
         let container = NSPersistentContainer(name: "FruitVegi")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -79,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
 
+    //the context is sort of a scratch pad to make changes on and when ready it can be committed to permanent storage.
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

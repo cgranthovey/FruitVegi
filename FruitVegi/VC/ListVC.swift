@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("info.plist")
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var items: [Food] = []
     
@@ -24,11 +25,11 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         // Do any additional setup after loading the view.
-        getItems()
+//        getItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        print("my files", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,8 +73,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 return
             }
             
+            
+            
             print("the tf text", tfName, tfCost)
-            let food = Food(name: tfName, cost: tfCost, dateAdded: Date())
+            let food = Food(context: self.context)
+            food.name = tfName
+            food.cost = tfCost
+            food.dateAdded = Date()
             self.items.append(food)
             
             self.saveItems()
@@ -83,27 +89,24 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         present(alertController, animated: true, completion: nil)
     }
     
-    func getItems(){
-        if let url = dataFilePath, let data = try? Data(contentsOf: url){
-            let propertyListDecoder = PropertyListDecoder()
-            do{
-                items = try propertyListDecoder.decode([Food].self, from: data)
-                tableView.reloadData()
-            } catch{
-                print("error getting core data", error.localizedDescription)
-            }
-            
-        }
-    }
+//    func getItems(){
+//        if let url = dataFilePath, let data = try? Data(contentsOf: url){
+//            let propertyListDecoder = PropertyListDecoder()
+//            do{
+//                items = try propertyListDecoder.decode([Food].self, from: data)
+//                tableView.reloadData()
+//            } catch{
+//                print("error getting core data", error.localizedDescription)
+//            }
+//
+//        }
+//    }
     
     func saveItems(){
         let propertyListEncoder = PropertyListEncoder()
         
         do{
-            let data = try propertyListEncoder.encode(items)
-            if let path = dataFilePath{
-                try data.write(to: path)
-            }
+            try context.save()
         } catch{
             print("error encoding docs - ", error)
         }

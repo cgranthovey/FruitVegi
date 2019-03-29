@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		158E9C71224D904F004E7EDA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E9C70224D904F004E7EDA /* UIColor.swift */; };
 		15991AD2224B0691007E543D /* FoodPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15991AD1224B0691007E543D /* FoodPriceCell.swift */; };
-		15991AD5224B0857007E543D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15991AD4224B0857007E543D /* Food.swift */; };
 		15A557402249D5D700A025A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5573F2249D5D700A025A3 /* AppDelegate.swift */; };
 		15A557422249D5D700A025A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A557412249D5D700A025A3 /* ViewController.swift */; };
 		15A557452249D5D700A025A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A557432249D5D700A025A3 /* Main.storyboard */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		158E9C70224D904F004E7EDA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		15991AD1224B0691007E543D /* FoodPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPriceCell.swift; sourceTree = "<group>"; };
-		15991AD4224B0857007E543D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		15A5573C2249D5D700A025A3 /* FruitVegi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitVegi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A5573F2249D5D700A025A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15A557412249D5D700A025A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +95,7 @@
 		15991AD3224B07E5007E543D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15991AD4224B0857007E543D /* Food.swift */,
+				15A557462249D5D700A025A3 /* FruitVegi.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,17 +123,16 @@
 		15A5573E2249D5D700A025A3 /* FruitVegi */ = {
 			isa = PBXGroup;
 			children = (
+				15A5573F2249D5D700A025A3 /* AppDelegate.swift */,
 				158E9C6F224D903F004E7EDA /* Extension */,
 				15A557732249DA7200A025A3 /* VC */,
 				15991AD3224B07E5007E543D /* Model */,
 				15A557702249D8F300A025A3 /* View */,
-				15A5573F2249D5D700A025A3 /* AppDelegate.swift */,
 				15A557412249D5D700A025A3 /* ViewController.swift */,
 				15A557432249D5D700A025A3 /* Main.storyboard */,
 				15A557492249D5D900A025A3 /* Assets.xcassets */,
 				15A5574B2249D5D900A025A3 /* LaunchScreen.storyboard */,
 				15A5574E2249D5D900A025A3 /* Info.plist */,
-				15A557462249D5D700A025A3 /* FruitVegi.xcdatamodeld */,
 			);
 			path = FruitVegi;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 				15A557402249D5D700A025A3 /* AppDelegate.swift in Sources */,
 				158E9C71224D904F004E7EDA /* UIColor.swift in Sources */,
 				15A557482249D5D700A025A3 /* FruitVegi.xcdatamodeld in Sources */,
-				15991AD5224B0857007E543D /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +646,8 @@
 				15A557472249D5D700A025A3 /* FruitVegi.xcdatamodel */,
 			);
 			currentVersion = 15A557472249D5D700A025A3 /* FruitVegi.xcdatamodel */;
-			path = FruitVegi.xcdatamodeld;
+			name = FruitVegi.xcdatamodeld;
+			path = ../FruitVegi.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
